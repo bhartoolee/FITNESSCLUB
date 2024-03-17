@@ -1,137 +1,131 @@
-import React from "react";
-import { Text, View, TextInput, TouchableOpacity, StyleSheet, Image } from "react-native";
+import React from 'react';
+import { Text, TouchableOpacity, StyleSheet, View, Image } from 'react-native'
 
-
-const Home = (props) => {
+const home = (props) => {
     return (
-        <View >
+        <View>
             <Image
                 source={props.menu}
                 style={style.menu}
             />
+
             <View style={style.content}>
                 <Image
                     source={props.icon}
                     style={style.icon}
                 />
+
                 <Text style={style.header}>{props.header}</Text>
             </View>
 
-            <Text style={style.subheader}>{props.greeting}</Text>
+            <Text style={style.subheader}>{props.greetings}</Text>
 
             <TouchableOpacity style={style.button}>
                 <Text style={style.text}>SIGN IN</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={style.buttons}>
-                <Text style={style.texts}>SIGN UP</Text>
+                <Text style={style.texts}>SIGN IN</Text>
             </TouchableOpacity>
 
             <Text style={style.footer}>Login with Social Media</Text>
 
-            <View style={style.foot}>
+            <View style={style.last}>
                 <Image
                     source={props.first}
-                    style={style.image}
+                    style={style.social}
                 />
                 <Image
                     source={props.second}
-                    style={style.image}
+                    style={style.social}
                 />
                 <Image
                     source={props.third}
-                    style={style.image}
+                    style={style.social}
                 />
             </View>
+
         </View>
     )
 }
 
 const style = StyleSheet.create({
     menu: {
-        width: 40,
-        height: 10,
-        marginLeft: 300,
-        marginVertical: 50
+        width: 30,
+        height: 20,
+        marginLeft: 290,
+        marginVertical: 40
     },
     content: {
-        alignContent: 'center',
-        justifyContent: "center",
-        marginTop: 60,
-        marginBottom: 90,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 80,
+        marginBottom: 130
     },
     icon: {
         width: 40,
-        height: 30,
-        marginLeft: '45%'
+        height: 40,
     },
     header: {
-        fontSize: 23,
+        fontSize: 25,
         fontWeight: "400",
-        color: '#fff',
-        marginLeft: '30%'
+        color: '#fff'
     },
     subheader: {
-        fontSize: 30,
+        fontSize: 23,
         fontWeight: "bold",
-        marginVertical: 30,
+        marginBottom: 20,
         color: '#fff',
         marginLeft: '25%'
     },
     button: {
-        marginLeft: '14%',
-        paddingHorizontal: 20,
-        paddingVertical: 8,
         alignItems: 'center',
-        justifyContent: "center",
-        borderColor: '#fff',
+        justifyContent: 'center',
+        width: 300,
+        paddingHorizontal: 16,
+        paddingVertical: 8,
         borderStyle: 'solid',
+        borderColor: 'white',
         borderWidth: 1,
-        borderRadius: 30,
-        width: 250,
-        marginBottom: 20
+        borderRadius: 20,
+        marginBottom: 15
     },
     text: {
-        fontSize: 20,
-        fontWeight: "300",
-        color: 'white'
+        fontSize: 18,
+        color: '#fff',
+        fontWeight: "300"
     },
     buttons: {
-        marginLeft: '14%',
-        paddingHorizontal: 20,
-        paddingVertical: 8,
         alignItems: 'center',
-        justifyContent: "center",
-        borderColor: '#fff',
-        borderStyle: 'solid',
-        borderWidth: 1,
-        borderRadius: 30,
-        width: 250,
-        marginBottom: 20,
-        backgroundColor: 'white'
+        justifyContent: 'center',
+        width: 300,
+        paddingHorizontal: 16,
+        paddingVertical: 8,
+        backgroundColor: '#fff',
+        borderRadius: 20
     },
     texts: {
-        fontSize: 20,
-        fontWeight: "300",
+        fontSize: 18,
+        fontWeight: "300"
     },
     footer: {
-        marginLeft: '30%',
-        fontSize: 15,
-        color: 'white',
-        marginTop: 80,
-        marginBottom:8,
+        color: '#fff',
+        fontSize: 13,
+        marginBottom: 8,
+        marginLeft: '28%',
+        marginTop: 100
     },
-    foot:{
+    last: {
         flexDirection: 'row',
-        alignItems:'center',
-        justifyContent:'center'
+        alignItems: 'center',
+        justifyContent: "center"
     },
-    image: {
+    social: {
         width: 20,
         height: 20,
         borderRadius: 10,
-        margin: 2,
+        margin: 3,
+        backgroundColor: '#fff'
     }
 })
-
-export default Home
+export default home
